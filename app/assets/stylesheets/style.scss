@@ -1,0 +1,57 @@
+html, body{
+  margin: 0px;
+  font-family: 'Lato', sans-serif;
+  
+}
+
+a,a:visited{
+  color: inherit !important;
+  text-decoration: none;
+}
+
+.be-green{
+  background-color: #0D8AFF;
+}
+
+.white{
+  color: white;
+}
+
+.large-padding{
+  padding: 7px 5px;
+}
+
+.no-margin{
+  margin: 0px;
+}
+
+#logo{
+  font-size: 1.2em;
+}
+
+#menu1{
+    list-style-type: none;
+}
+
+.field{
+  margin-top:1em;
+}
+
+.form-control{
+  border:1px solid #DBD1FF;
+  outline:none;
+  width:95%;
+  display: block;
+  padding: 10px 0px;
+  font-size: 1.2em;
+}
+
+.btn{
+  border:1px solid #DBD1FF;
+  outline:none;
+  text-transform:uppercase;
+  cursor:pointer;
+  padding: 10px 12px;
+  font-size:1.2em;
+}
+
