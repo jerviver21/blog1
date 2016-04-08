@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
  #GET /articles
  def index
    @articles = Article.all
+   @article
  end
  
  #GET /article/:id
@@ -16,9 +17,35 @@ class ArticlesController < ApplicationController
  
  #POST /articles
  def create
-   @article = Article.new(title: params[:article][:title], 
-                          body: params[:article][:body])
-   @article.save
-   redirect_to @article
+   #@article = Article.new(title: params[:article][:title], body: params[:article][:body])
+   #Mejor usamos Strong params, para que ActiveRecord entienda JSON
+   @article = Article.new(articles_params)
+   #Realizamos las validaciones
+   if @article.save
+    redirect_to @article 
+   else
+    render :new
+   end
+   
  end
+ 
+ #PUT /articles/:id
+ def destroy
+   @article = Article.find(params[:id])
+   @article.destroy #Elimina el objeto de la BD
+   redirect_to articles_path
+ end
+ 
+ #DELETE /articles/:id
+ def update
+
+ end
+ 
+ #Implementamos strong params, para que active record entienda json, por seguridad se indica cuales campos son permitidos
+ private
+ 
+ def articles_params
+   params.require(:article).permit(:title, :body)
+ end
+ 
 end

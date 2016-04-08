@@ -1,10 +1,11 @@
-<table>
+<div style="width:80%; margin: 0 auto;">
 <% @articles.each do |article| %>
-<tr>
-<td><%=article.title%></td>
-<td>
+<h1><%=article.title%></h1>
+
+<div>
 	<%=article.body%>
-</td>
-</tr>
+</div>
+<%= link_to "Eliminar", article, method: :delete %>
+
 <% end %>
 </table>
