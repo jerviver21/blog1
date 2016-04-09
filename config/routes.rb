@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :users
   resources :articles
 #=begin  path  (accionxdefecto)
 # get "/articles"  (index)

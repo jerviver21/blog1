@@ -36,9 +36,19 @@ class ArticlesController < ApplicationController
    redirect_to articles_path
  end
  
+ #GET /articles/:id/edit
+ def edit
+   @article = Article.find(params[:id])
+ end
+ 
  #DELETE /articles/:id
  def update
-
+  @article = Article.find(params[:id])
+  if @article.update(articles_params)
+    redirect_to @article 
+  else
+    render :edit
+  end 
  end
  
  #Implementamos strong params, para que active record entienda json, por seguridad se indica cuales campos son permitidos

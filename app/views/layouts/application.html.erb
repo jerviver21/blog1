@@ -6,29 +6,18 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  
+  
+
 </head>
 <body>
+	
 	<header>
-		<nav class="be-green white large-padding ">
-			<ul class="no-list row center-xs middle-xs" id="menu1">
-				<li class="col-md">
-					<h1 class="no-margin" id="logo">Paideia!!</h1>
-				</li>
-				<li class="col-md">
-					<%=link_to "Inicio", root_path %>
-				</li>
-				<li class="col-md">
-					Diseño
-				</li>
-				<li class="col-md">
-					Programación
-				</li>
-				<li class="col-md">
-					Tecnología
-				</li>
-			</ul>
-		</nav>
+		<%= render "partial/navigation"%>
 	</header>
+<!-- Los dos siguientes exigidos por devise para usuarios -->	
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 <%= yield %>
 
