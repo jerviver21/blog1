@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
  def create
    #@article = Article.new(title: params[:article][:title], body: params[:article][:body])
    #Mejor usamos Strong params, para que ActiveRecord entienda JSON
-   @article = Article.new(articles_params)
+   @article = current_user.articles.new(articles_params)
    #Realizamos las validaciones
    if @article.save
     redirect_to @article 
